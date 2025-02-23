@@ -2106,7 +2106,8 @@ func (t *tScreen) Beep() error {
 // to it's initial state.  It should not be called more than once.
 func (t *tScreen) finalize() {
 	t.disengage()
-	_ = t.tty.Close()
+	// Do not close. SSH session continues
+	//_ = t.tty.Close()
 }
 
 func (t *tScreen) StopQ() <-chan struct{} {
