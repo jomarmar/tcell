@@ -1,4 +1,4 @@
-module github.com/jomarmar/tcell
+module github.com/jomarmar/tcell/v2
 
 go 1.23.4
 
