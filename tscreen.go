@@ -2093,7 +2093,7 @@ func (t *tScreen) disengage() {
 	t.enablePasting(false)
 	t.disableFocusReporting()
 
-	_ = t.tty.Stop()
+	//_ = t.tty.Stop()
 }
 
 // Beep emits a beep to the terminal.
