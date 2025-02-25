@@ -20,6 +20,8 @@
 package encoding
 
 import (
+	"golang.org/x/text/encoding/unicode"
+
 	"github.com/gdamore/encoding"
 	"github.com/gdamore/tcell/v2"
 
@@ -42,6 +44,7 @@ func Register() {
 
 func registerAll() {
 	// We supply latin1 and latin5, because Go doesn't
+	tcell.RegisterEncoding("UTF-16", unicode.UTF16(unicode.BigEndian, unicode.IgnoreBOM))
 	tcell.RegisterEncoding("ISO8859-1", encoding.ISO8859_1)
 	tcell.RegisterEncoding("ISO8859-9", encoding.ISO8859_9)
 

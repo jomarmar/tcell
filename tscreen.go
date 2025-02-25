@@ -189,8 +189,8 @@ func (t *tScreen) Init() error {
 	t.keychan = make(chan []byte, 10)
 	t.keytimer = time.NewTimer(time.Millisecond * 50)
 	t.charset = "UTF-8"
-
-	t.charset = getCharset()
+	// Use UTF-8 by default - Windows not working otherwise
+	//t.charset = getCharset()
 	if enc := GetEncoding(t.charset); enc != nil {
 		t.encoder = enc.NewEncoder()
 		t.decoder = enc.NewDecoder()
